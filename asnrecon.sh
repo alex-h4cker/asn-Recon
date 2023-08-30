@@ -7,7 +7,7 @@ read -p "Enter search term: " searchTerm
 encodedSearchTerm=$(echo -n "$searchTerm" | xxd -plain | tr -d '\n' | sed 's/\(>
 
 
-curl "https://bgp.he.net/search?search%5Bsearch%5D=$encodedSearchTerm&commit=Se>
+curl "https://bgp.he.net/search?search%5Bsearch%5D=$encodedSearchTerm -o asn.txt
 
 
 grep -oE 'AS[0-9]+' as.txt
